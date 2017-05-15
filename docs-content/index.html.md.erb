@@ -1,117 +1,71 @@
 ---
-title: YOUR-PRODUCT-NAME (Beta)
+title: Hazelcast Jet for Pivotal Cloud Foundry
 owner: Partners
 ---
-<style>
-    .note.warning {
-        background-color: #fdd;
-        border-color: #fbb
-    }
 
-    .note.warning:before {
-        color: #f99;
-     }
-</style>
-
-<p class="note warning">
-<strong>WARNING! </strong>
-The PRODUCT-NAME for PCF tile is currently in beta and is intended for evaluation and test purposes only. 
-Do not use this product in a PCF production environment.
-</p>
-
-**This topic begins with a brief description of what the product tile (e.g. Apigee Edge Service Broker for PCF) does, 
-whereas the Overview section below describes what the service itself (e.g. Apigee Edge) does. See below for an example.**
-
-This documentation describes the Apigee Edge Service Broker for Pivotal Cloud Foundry (PCF). The Apigee Edge Service 
-Broker for PCF enables developers to manage APIs for their PCF apps through the Apigee Edge management console.
-
-**Note**: This description will appear under **OVERVIEW** in the tile's listing on 
-[Pivotal Network](http://network.pivotal.io).
+This documentation describes how to install, configure, and use Hazelcast Jet for Pivotal Cloud Foundry (PCF).
+Hazelcast Jet for PCF registers a service broker on PCF and exposes its service plans on the Marketplace.
+Developers can provision Hazelcast Jet clusters by creating instances of the service plans using the Cloud Foundry Command Line Interface (cf CLI).
 
 ## <a id='overview'></a>Overview
 
-**The overview describes the service that your product offers to PCF developers. See below for an example.**
+Hazelcast Jet for PCF uses an on-demand services SDK, which is a part of [Pivotal Cloud Services SDK](https://network.pivotal.io/products/on-demand-services-sdk),
+to fully utilize BOSH-2.0 features and let you provision instances more flexibly.
 
-The Apigee Edge Service Broker for PCF registers a service broker with PCF and exposes its service plans on the 
-Marketplace. Developers can then create service plan instances using Apps Manager or the Cloud Foundry Command 
-Line Interface (cf CLI) and bind them to their apps.
+Features of Hazelcast Jet for PCF include the following:
 
-Creating an Apigee Edge for PCF service instance and binding it to an app creates an Apigee Edge API proxy that 
-handles requests for the app. This lets developers use the Apigee Edge management console to manage API request 
-handling between clients and the app.
-
-**Note**: This overview will appear under **OVERVIEW**, combined with the description above in the tile's listing on 
-[Pivotal Network](http://network.pivotal.io).
-
-## <a id='features'></a>Key Features
-
-YOUR-PRODUCT-NAME includes the following key features:
-
-* Feature one.
-* Feature two.
-* Feature three.
-
-**Note**: This feature list will appear under **FEATURES** in the tile's listing on 
-[Pivotal Network](http://network.pivotal.io).
+* Based on [Hazelcast Enterprise](https://hazelcast.com/), the leading in-memory data grid (IMDG)
+* The ability to dynamically pass your Hazelcast Jet configuration in JSON format when creating services
+* An on-demand service broker that dynamically creates and scales Hazelcast Jet clusters without pre-provisioning blocks of VMs
 
 ## <a id="snapshot"></a>Product Snapshot
 
-The following table provides version and version-support information about PRODUCT-NAME.
+The following table provides version and version-support information about Hazelcast Jet for PCF:
 
 <table class="nice">
     <th>Element</th>
     <th>Details</th>
     <tr>
         <td>Version</td>
-        <td>vYOUR-VERSION-NUMBER</td>
+        <td>v0.3.1.0</td>
     </tr>
     <tr>
         <td>Release date</td>
-        <td>YOUR-RELEASE-DATE (Ex: July 1, 2017)</td>
+        <td>May 22, 2017</td>
     </tr>
     <tr>
         <td>Software component version</td>
-        <td>vYOUR-SOFTWARE-COMPONENT-VERSION-NUMBER</td>
+        <td>v0.3.1</td>
     </tr>
     <tr>
         <td>Compatible Ops Manager version(s)</td>
-        <td>vYOUR-COMPATIBLE-OPS-MAN-VERSION (Ex. v1.8.x, v1.9.x, v1.10.x)</td>
+        <td>v1.8.x, v1.9.x, v1.10.x</td>
     </tr>
     <tr>
         <td>Compatible Elastic Runtime version(s)</td>
-        <td>vYOUR-COMPATIBLE-ELASTIC-RUNTIME-VERSION (Ex. v1.8.x, v1.9.x, v1.10.x)</td>
+        <td>v1.8.x, v1.9.x, v1.10.x</td>
     </tr>
     <tr>
         <td>IaaS support</td>
-        <td>AWS?, Azure?, GCP?, OpenStack?, and vSphere?</td>
+        <td>AWS and vSphere</td>
     </tr>
     <tr>
-        <td>IPsec support?</td>
-        <td>[Yes or No]</td>
+        <td>IPsec support</td>
+        <td>Yes</td>
     </tr>
 </table>
 
-## <a id="reqs"></a>Requirements
-
-**Provide any general or specific requirements, prerequisites, or dependencies here. 
-A general requirement might be something like, "An AppDynamics account." 
-A specific requirement might be something like, "Packaging Dependencies for Offline Buildpacks."**
-
-YOUR-PRODUCT-NAME has the following requirements:
-
-+ PREREQUISITE-1
-
-+ PREREQUISITE-2
-
 ## <a id="limitations"></a>Limitations
 
-**List any known limitations.**
+If you change `managementCenterConfig` in your JSON configuration file, then all VMs are shutdown at the same time. This means that you lose all the cluster data unless you are persisting that data elsewhere.
 
 ## <a id="feedback"></a>Feedback
 
-Please provide any bugs, feature requests, or questions to the 
-[Pivotal Cloud Foundry Feedback](mailto:pivotal-cf-feedback@pivotal.io) list or send an email to YOUR-SUPPORT-EMAIL.
+Please provide any bugs, feature requests, or questions to the [Hazelcast Jet User Group](mailto:hazelcast-jet@googlegroups.com), the
+[Hazelcast Jet GitHub repo](https://github.com/hazelcast/hazelcast-jet), or by sending an email to [Hazelcast Support](mailto:support@hazelcast.com).
 
 ## <a id='license'></a>License
 
-**List any license information here.**
+Hazelcast Jet for PCF needs an active Hazelcast Enterprise License. You can request a trial license from [hazelcast.com](https://hazelcast.com/hazelcast-enterprise-download/trial/)
+or by contacting [sales@hazelcast.com](mailto:sales@hazelcast.com).
+

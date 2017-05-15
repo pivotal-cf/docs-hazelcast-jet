@@ -1,15 +1,66 @@
 ---
-title: Using YOUR-PRODUCT-NAME
+title: Using Hazelcast Jet for PCF
 owner: Partners
 ---
 
-This topic describes how to use YOUR-PRODUCT-NAME.
+This topic describes how developers use Hazelcast Jet for Pivotal Cloud Foundry (PCF).
 
-##<a id='using'></a> Using YOUR-PRODUCT-NAME
+After your PCF operator installs the Hazelcast Jet for PCF tile, it automatically registers itself to the Marketplace.
 
-**This topic should include any instructions for how to use the service or dashboard created by the tile. 
-Give procedures for how to perform the different functions offered by your product and provide screenshots where necessary.** 
+Follow these steps to create an instance of the Hazelcast Jet service based on an available plan and bind it to your app.
+The plans available to you are determined by your PCF operator. 
+For more information about configuring plans, see [Installing and Configuring Hazelcast Jet for PCF](installing.html).
 
-**You can also use this section to include information about Architecture and Troubleshooting for known errors. 
-If you include a Troubleshooting section, follow the Symptom/Explanation format used in the 
-[Okta Troubleshooting](http://docs.pivotal.io/p-identity/okta/troubleshooting.html) topic**.
+<a id="marketplace"></a>
+
+1. To check availability of Hazelcast Jet for PCF, enter the following command:
+
+    ```
+    $ cf marketplace
+    ```
+    For example, 
+
+    <pre class="terminal">
+$ cf marketplace 
+Getting services from marketplace in org system / space system as admin... 
+OK<br>
+service         plans                            description 
+app-autoscaler 	bronze, gold                     Scales bound applications in response to load (beta) 
+hazelcast-jet   t2.micro, t2.small, m3.medium    Hazelcast Jet Service
+    </pre>
+
+    <a id="create-service"></a>
+
+1. Create a file named `hazelcast-jet.json` using this [sample Hazelcast Jet JSON file](https://github.com/hazelcast/hazelcast-jet-code-samples/blob/master/pcf/hazelcast-jet.json) as a template.
+
+1. Replace `YOUR_LICENSE_KEY` with the active Hazelcast Enterprise License or a trial license. For more information, see [License](index.html#license). 
+
+1. To create a cluster, enter the following command:
+  
+    ```
+    $ cf create-service hazelcast-jet PLAN SERVICE_INSTANCE_NAME -c hazelcast-jet.json
+    ```
+    For example, 
+    <pre class="terminal">
+$ cf create-service hazelcast-jet t2.micro micro-cluster -c hazelcast-jet.json
+Creating service instance micro-cluster in org system / space system as admin...
+OK<br> 
+Create in progress. Use 'cf services' or 'cf service micro-cluster' to check operation status. 
+    </pre>
+
+3. To bind the service to your app, enter the following commands:
+
+    ```
+    $ cf bind-service MY-APPLICATION SERVICE_INSTANCE_NAME
+    $ cf restage MY-APPLICATION
+    ```
+    For example,
+    <pre class="terminal">
+$ cf bind-service myapp micro-cluster
+$ cf restage myapp
+    </pre>
+
+4. Start using the Hazelcast Jet. Necessary parameters are passed to your application in
+ `VCAP_SERVICES` environment variable. See [this sample Hazelcast Jet Spring Boot application](https://github.com/hazelcast/hazelcast-jet-code-samples/tree/master/pcf)
+ for further information.
+
