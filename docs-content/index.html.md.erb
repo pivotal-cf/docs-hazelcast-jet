@@ -1,7 +1,12 @@
 ---
-title: Hazelcast Jet for Pivotal Cloud Foundry
+title: Hazelcast Jet for PCF (Beta)
 owner: Partners
 ---
+<p class="note warning">
+<strong>WARNING! </strong>
+The Hazelcast Jet for PCF tile is currently in beta and is intended for evaluation and test purposes only. 
+Do not use this product in a PCF production environment.
+</p>
 
 This documentation describes how to install, configure, and use Hazelcast Jet for Pivotal Cloud Foundry (PCF).
 Hazelcast Jet for PCF registers a service broker on PCF and exposes its service plans on the Marketplace.
@@ -57,7 +62,8 @@ The following table provides version and version-support information about Hazel
 
 ## <a id="limitations"></a>Limitations
 
-If you change `managementCenterConfig` in your JSON configuration file, then all VMs are shutdown at the same time. This means that you lose all the cluster data unless you are persisting that data elsewhere.
+If you change `managementCenterConfig` in your JSON configuration file, all VMs are shut down at the same time. 
+This means that you lose all cluster data unless you are persisting that data elsewhere.
 
 ## <a id="feedback"></a>Feedback
 
@@ -66,6 +72,7 @@ Please provide any bugs, feature requests, or questions to the [Hazelcast Jet Us
 
 ## <a id='license'></a>License
 
-Hazelcast Jet for PCF needs an active Hazelcast Enterprise License. You can request a trial license from [hazelcast.com](https://hazelcast.com/hazelcast-enterprise-download/trial/)
+Hazelcast Jet for PCF needs an active Hazelcast Enterprise License. 
+You can request a trial license from [hazelcast.com](https://hazelcast.com/hazelcast-enterprise-download/trial/)
 or by contacting [sales@hazelcast.com](mailto:sales@hazelcast.com).
 

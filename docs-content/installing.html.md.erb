@@ -31,10 +31,10 @@ Complete the following steps to download and install the Hazelcast Jet for PCF t
         For an example of how the plan name and description appear on the command line, see [Step&nbsp;1](using.html#marketplace) in the _Using Hazelcast Jet for PCF_ topic.
 
     1. Specify the number of **Hazelcast Jet instances** for this plan. This property defines the number of Hazelcast Jet instances to be created.
-     It can be overridden for each service instance when creating a service instance by using `instanceCount` parameter. See [Step&nbsp;2](using.html#create-service) in the _Using Hazelcast Jet for PCF_ topic for more information.
-    1. Select a **Hazelcast Jet VM type**. Choose a suitable VM type according to your data size and processing power requirements.
+     It can be overridden for each service instance when creating a service instance by using the `instanceCount` parameter. See [Step&nbsp;2](using.html#create-service) in the _Using Hazelcast Jet for PCF_ topic for more information.
+    1. Select a **Hazelcast Jet VM type**. Choose a suitable VM type according to your data needs and processing power requirements.
     1.  If you are planning on using features like [Hot Restart](http://docs.hazelcast.org/docs/3.7/manual/html-single/index.html#hot-restart-persistence) that require a persistent disk, select a **Hazelcast Jet Disk type**. Otherwise, you can leave this option empty because Hazelcast Jet, by default, does not require a persistent disk.
-    1. Select the **Hazelcast Jet availability zone(s)** in which to create VMs for this plan.
+    1. Select the **Hazelcast Jet availability zone(s)** where you want to create VMs for this plan.
     1. Click **Save**.
     <%= image_tag("first_plan.png") %>
 
