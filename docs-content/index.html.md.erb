@@ -10,7 +10,7 @@ Do not use this product in a PCF production environment.
 
 This documentation describes how to install, configure, and use Hazelcast Jet for Pivotal Cloud Foundry (PCF).
 Hazelcast Jet for PCF registers a service broker on PCF and exposes its service plans on the Marketplace.
-Developers can provision Hazelcast Jet clusters by creating instances of the service plans using the Cloud Foundry Command Line Interface (cf CLI).
+Developers can provision Hazelcast Jet clusters by creating instances of the service plans using the Cloud Foundry Command Line Interface (cf CLI) tool.
 
 ## <a id='overview'></a>Overview
 
@@ -62,7 +62,7 @@ The following table provides version and version-support information about Hazel
 
 ## <a id="limitations"></a>Limitations
 
-If you change `managementCenterConfig` in your JSON configuration file, all VMs are shut down at the same time. 
+If you change `managementCenterConfig` in your JSON configuration file, all VMs shut down at the same time. 
 This means that you lose all cluster data unless you are persisting that data elsewhere.
 
 ## <a id="feedback"></a>Feedback
