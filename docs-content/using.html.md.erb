@@ -1,19 +1,19 @@
 ---
-title: Using Hazelcast Jet for PCF
+title: Using Hazelcast Jet Enterprise for PCF
 owner: Partners
 ---
 
 This topic describes how developers use Hazelcast Jet for Pivotal Cloud Foundry (PCF).
 
-After your PCF operator installs the Hazelcast Jet for PCF tile, it automatically registers itself to the Marketplace.
+After your PCF operator installs the Hazelcast Jet Enterprise for PCF tile, it automatically registers itself to the Marketplace.
 
 Follow these steps to create an instance of the Hazelcast Jet service based on an available plan and bind it to your app.
 The plans available to you are determined by your PCF operator. 
-For more information about configuring plans, see [Installing and Configuring Hazelcast Jet for PCF](installing.html).
+For more information about configuring plans, see [Installing and Configuring Hazelcast Jet Enterprise for PCF](installing.html).
 
-<a id="marketplace"></a>
+## <a id="marketplace"></a> Checking Availability
 
-1. To check availability of Hazelcast Jet for PCF, enter the following command:
+1. To check availability of Hazelcast Jet Enterprise for PCF, enter the following command:
 
     ```
     $ cf marketplace
@@ -29,9 +29,9 @@ app-autoscaler 	bronze, gold                     Scales bound applications in re
 hazelcast-jet   t2.micro, t2.small, m3.medium    Hazelcast Jet Service
     </pre>
 
-    <a id="create-service"></a>
+## <a id="create-service"></a> Create and Bind a Service to Your App
 
-1. Create a file named `hazelcast-jet.json` using this [sample Hazelcast Jet JSON file](https://github.com/hazelcast/hazelcast-jet-code-samples/blob/master/pcf/hazelcast-jet.json) as a template.
+1. Create a file named `hazelcast-jet.json` using this [sample Hazelcast Jet JSON file](https://github.com/hazelcast/hazelcast-jet-code-samples/blob/master/integration/pcf/hazelcast-jet.json) as a template.
 
 1. Replace `YOUR_LICENSE_KEY` with your active Hazelcast Enterprise License or a trial license. For more information, see [License](index.html#license). 
 
@@ -62,5 +62,5 @@ $ cf restage myapp
 
 4. Start using the Hazelcast Jet. Necessary parameters are passed to your application in
  `VCAP_SERVICES` environment variables.
-For more information, see [Sample Spring Boot Application to use Hazelcast Jet for PCF](https://github.com/hazelcast/hazelcast-jet-code-samples/tree/master/pcf).
+For more information, see [Sample Spring Boot Application to use Hazelcast Jet Enterprise for PCF](https://github.com/hazelcast/hazelcast-jet-code-samples/tree/master/integration/pcf).
 

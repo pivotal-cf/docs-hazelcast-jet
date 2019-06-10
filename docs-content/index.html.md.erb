@@ -1,58 +1,63 @@
 ---
-title: Hazelcast Jet for PCF (Beta)
+title: Hazelcast Jet Enterprise for PCF (Beta)
 owner: Partners
 ---
+
 <p class="note warning">
 <strong>WARNING! </strong>
-The Hazelcast Jet for PCF tile is currently in beta and is intended for evaluation and test purposes only.
+The Hazelcast Jet Enterprise for PCF tile is currently in beta and is intended for evaluation and test purposes only.
 Do not use this product in a PCF production environment.
 </p>
 
 This documentation describes how to install, configure, and use Hazelcast Jet for Pivotal Cloud Foundry (PCF).
-Hazelcast Jet for PCF registers a service broker on PCF and exposes its service plans on the Marketplace.
+Hazelcast Jet Enterprise for PCF registers a service broker on PCF and exposes its service plans on the Marketplace.
 Developers can provision Hazelcast Jet clusters by creating instances of the service plans using the Cloud Foundry Command Line Interface (cf CLI) tool.
 
 ## <a id='overview'></a>Overview
 
-Hazelcast Jet for PCF uses an on-demand services SDK, which is a part of [Pivotal Cloud Services SDK](https://network.pivotal.io/products/on-demand-services-sdk),
+Hazelcast Jet Enterprise for PCF uses an on-demand services SDK, which is a part of [Pivotal Cloud Services SDK](https://network.pivotal.io/products/on-demand-services-sdk),
 to fully utilize BOSH-2.0 features and let you provision instances more flexibly.
 
-Features of Hazelcast Jet for PCF include the following:
+Features of Hazelcast Jet Enterprise for PCF include the following:
 
-* Based on [Hazelcast Enterprise](https://hazelcast.com/), the leading in-memory data grid (IMDG)
+* Based on [Hazelcast Jet Enterprise](https://hazelcast.com/jet), Ultra-Fast Stream Processing Framework
 * The ability to dynamically pass your Hazelcast Jet configuration in JSON format when creating services
 * An on-demand service broker that dynamically creates and scales Hazelcast Jet clusters without pre-provisioning blocks of VMs
 
 ## <a id="snapshot"></a>Product Snapshot
 
-The following table provides version and version-support information about Hazelcast Jet for PCF:
+The following table provides version and version-support information about Hazelcast Jet Enterprise for PCF:
 
 <table class="nice">
     <th>Element</th>
-    <th>Details</th>
+    <th>v3.0.0</th>
     <tr>
         <td>Version</td>
-        <td>v0.5.1.0</td>
+        <td>v3.0.0</td>
     </tr>
     <tr>
         <td>Release date</td>
-        <td>December 15, 2017</td>
+        <td>June 10, 2019</td>
     </tr>
     <tr>
         <td>Software component version</td>
-        <td>v0.5.0</td>
+        <td>v3.0.0</td>
     </tr>
     <tr>
         <td>Compatible Ops Manager version(s)</td>
-        <td>v1.8.x, v1.9.x, v1.10.x, v1.11.x, and v1.12.x</td>
+        <td>v2.2, v2.3, v2.4, and v2.5</td>
     </tr>
     <tr>
-        <td>Compatible Elastic Runtime version(s)</td>
-        <td>v1.8.x, v1.9.x, v1.10.x, v1.11.x, and v1.12.x</td>
+        <td>Compatible Pivotal Application Services (PAS) version(s)</td>
+        <td>v2.2, v2.3, v2.4, and v2.5</td>
+    </tr>
+    <tr>
+        <td>BOSH stemcell version</td>
+        <td>Ubuntu Xenial</td>
     </tr>
     <tr>
         <td>IaaS support</td>
-        <td>[All Reference Architectures](http://docs.pivotal.io/pivotalcf/1-12/refarch/)</td>
+         <td><a href="https://docs.pivotal.io/pivotalcf/2-0/refarch/index.html">All Reference Architectures</a></td>
     </tr>
     <tr>
         <td>IPsec support</td>
@@ -72,6 +77,6 @@ Please provide any bugs, feature requests, or questions to the [Hazelcast Jet Us
 
 ## <a id='license'></a>License
 
-Hazelcast Jet for PCF needs an active Hazelcast Enterprise License.
-You can request a trial license from [hazelcast.com](https://hazelcast.com/hazelcast-enterprise-download/trial/)
+Hazelcast Jet Enterprise for PCF needs an active Hazelcast Jet Enterprise License.
+You can request a trial license from [hazelcast.com](https://hazelcast.com/download/)
 or by contacting [sales@hazelcast.com](mailto:sales@hazelcast.com).
