@@ -1,19 +1,19 @@
 ---
-title: Using Hazelcast Jet Enterprise for Pivotal Platform
+title: Using Hazelcast Jet Enterprise for VMware Tanzu
 owner: Partners
 ---
 
-This topic describes how developers use Hazelcast Jet for Pivotal Platform.
+This topic describes how developers use Hazelcast Jet for VMware Tanzu.
 
-After your Pivotal Platform operator installs the Hazelcast Jet Enterprise for Pivotal Platform tile, it automatically registers itself to the Marketplace.
+After your VMware Tanzu operator installs the Hazelcast Jet Enterprise for VMware Tanzu tile, it automatically registers itself to the Marketplace.
 
 Follow these steps to create an instance of the Hazelcast Jet service based on an available plan and bind it to your app.
-The plans available to you are determined by your Pivotal Platform operator. 
-For more information about configuring plans, see [Installing and Configuring Hazelcast Jet Enterprise for Pivotal Platform](installing.html).
+The plans available to you are determined by your VMware Tanzu operator. 
+For more information about configuring plans, see [Installing and Configuring Hazelcast Jet Enterprise for VMware Tanzu](installing.html).
 
 ## <a id="marketplace"></a> Checking Availability
 
-1. To check availability of Hazelcast Jet Enterprise for Pivotal Platform, enter the following command:
+1. To check availability of Hazelcast Jet Enterprise for VMware Tanzu, enter the following command:
 
     ```
     $ cf marketplace
@@ -62,5 +62,5 @@ $ cf restage myapp
 
 4. Start using the Hazelcast Jet. Necessary parameters are passed to your application in
  `VCAP_SERVICES` environment variables.
-For more information, see [Sample Spring Boot Application to use Hazelcast Jet Enterprise for Pivotal Platform](https://github.com/hazelcast/hazelcast-jet-code-samples/tree/master/integration/pcf).
+For more information, see [Sample Spring Boot Application to use Hazelcast Jet Enterprise for VMware Tanzu](https://github.com/hazelcast/hazelcast-jet-code-samples/tree/master/integration/pcf).
 
